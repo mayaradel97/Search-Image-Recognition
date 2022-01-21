@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "857A1942-6A30-4BD3-9F87-9E495A764953"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97B8BE06-3786-42FC-A990-ADC412F151D1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Search Image Recognition/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "97B8BE06-3786-42FC-A990-ADC412F151D1 - 89e1179a11634369"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Search_Image_Recognition.ViewController.uploadImageToFirebaseStorage(image: __C.UIImage) -&gt; Foundation.URL"
+                  moduleName = "Search Image Recognition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mayaradel/Desktop/Search%20Image%20Recognition/Search%20Image%20Recognition/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "1096">
+               </Location>
+               <Location
+                  uuid = "97B8BE06-3786-42FC-A990-ADC412F151D1 - 3a470db278c6bd0a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRStorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Search_Image_Recognition.ViewController.uploadImageToFirebaseStorage(image: __C.UIImage) -&gt; Foundation.URL"
+                  moduleName = "Search Image Recognition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mayaradel/Desktop/Search%20Image%20Recognition/Search%20Image%20Recognition/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB0FD53D-862F-4D8E-BB0D-A6C46324310A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Search Image Recognition/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
