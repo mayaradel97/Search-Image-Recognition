@@ -18,8 +18,8 @@ class SearchImageViewModel
     var searchIconBehavior = BehaviorRelay<Bool>(value: false)
     var webViewBehavior = BehaviorRelay<Bool>(value: true)
     var imageDataSubject = PublishSubject<Data>()
-    var googleURL = PublishSubject<URL>()
-    var errorMessageBehavior = PublishSubject<String>()
+    var googleURLSubject = PublishSubject<URL>()
+    var errorMessageSubject = PublishSubject<String>()
     
     let disposeBag = DisposeBag()
     func manageHiddenUI()
@@ -41,7 +41,7 @@ class SearchImageViewModel
                 guard let imageURL = imageURL
                 else
                 {
-                    self.errorMessageBehavior.onNext("An error occurred when loading image url!")
+                    self.errorMessageSubject.onNext("An error occurred when loading image url!")
                     return
                 }
                 //google method
@@ -56,7 +56,7 @@ class SearchImageViewModel
         guard let model = try? VNCoreMLModel(for:Resnet50(configuration: .init()).model )
         else
         {
-            errorMessageBehavior.onNext("loading coreml model failed")
+            errorMessageSubject.onNext("loading coreml model failed")
             return
         }
         //vision coreml request
@@ -65,7 +65,7 @@ class SearchImageViewModel
             guard let self = self else {return}
             guard let classificationFirstResult = request.results?.first as? VNClassificationObservation else
             {
-                self.errorMessageBehavior.onNext("model failed to process image")
+                self.errorMessageSubject.onNext("model failed to process image")
                 return
             }
             let accurateValueOfImageClassification = classificationFirstResult.identifier
@@ -79,7 +79,7 @@ class SearchImageViewModel
         }
         catch
         {
-            self.errorMessageBehavior.onNext("model failed to process image")
+            self.errorMessageSubject.onNext("model failed to process image")
             return
         }
     }
@@ -94,7 +94,7 @@ class SearchImageViewModel
             {
                 return
             }
-            self.googleURL.onNext(url)
+            self.googleURLSubject.onNext(url)
         }.disposed(by: disposeBag)
     }
     

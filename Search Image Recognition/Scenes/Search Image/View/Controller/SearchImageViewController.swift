@@ -3,7 +3,7 @@ import WebKit
 import RxSwift
 import RxCocoa
 
-class SearchImageViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate
+class SearchImageViewController: UIViewController
 {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchIcon: UIImageView!
@@ -38,7 +38,7 @@ class SearchImageViewController: UIViewController, UIImagePickerControllerDelega
     }
     func subscribeToGoogleURL()
     {
-        searchImageVM.googleURL.asObserver().subscribe
+        searchImageVM.googleURLSubject.asObserver().subscribe
         {[weak self] (googleURL) in
             guard let self = self else {return}
             guard let googleURL = googleURL.element
@@ -65,7 +65,7 @@ class SearchImageViewController: UIViewController, UIImagePickerControllerDelega
     }
     func subscribeToError()
     {
-        searchImageVM.errorMessageBehavior.asObservable().subscribe { (errorMessage) in
+        searchImageVM.errorMessageSubject.asObservable().subscribe { (errorMessage) in
             guard let errorMessage = errorMessage.element
             else
             {
@@ -78,7 +78,14 @@ class SearchImageViewController: UIViewController, UIImagePickerControllerDelega
         }.disposed(by: disposeBag)
         
     }
-    //MARK: - image picker methods
+   
+    
+}
+
+//MARK: - image picker methods
+extension SearchImageViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate
+{
+   
     func openCamera()
     {
         let imagePicker = UIImagePickerController()
@@ -91,9 +98,10 @@ class SearchImageViewController: UIViewController, UIImagePickerControllerDelega
         }
         else
         {
-            searchImageVM.errorMessageBehavior.onNext("camera not found")
+            searchImageVM.errorMessageSubject.onNext("camera not found")
         }
     }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
     {
         dismiss(animated: true, completion: nil)
@@ -103,7 +111,7 @@ class SearchImageViewController: UIViewController, UIImagePickerControllerDelega
             guard let ciImage = CIImage(image: userPickedImage)
             else
             {
-                searchImageVM.errorMessageBehavior.onNext("error converting picked image to ciimage")
+                searchImageVM.errorMessageSubject.onNext("error converting picked image to ciimage")
                 return
             }
             if  let imageData =  userPickedImage.jpegData(compressionQuality: 0.5)
@@ -115,9 +123,5 @@ class SearchImageViewController: UIViewController, UIImagePickerControllerDelega
             
         }
     }
-    
 }
-
-
-
 
