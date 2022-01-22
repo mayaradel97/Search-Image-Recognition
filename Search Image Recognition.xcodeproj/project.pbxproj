@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2EFD31F06E3903B545C1EFD0 /* Pods_Search_Image_Recognition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D40BAC8F5558F4266EB6C1 /* Pods_Search_Image_Recognition.framework */; };
 		9618793C2777EF0100A89757 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9618793B2777EF0100A89757 /* GoogleService-Info.plist */; };
+		9656D632279B86760055C231 /* UIViewControllerAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9656D631279B86760055C231 /* UIViewControllerAlertExtension.swift */; };
 		965E3559277A3A7F00947A14 /* EncodedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965E3558277A3A7F00947A14 /* EncodedStringExtension.swift */; };
 		9661019B2778FB1E00573971 /* SearchImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661019A2778FB1E00573971 /* SearchImageViewModel.swift */; };
 		96A242EF2774BF06006946DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A242EE2774BF06006946DA /* AppDelegate.swift */; };
@@ -18,13 +19,13 @@
 		96A242F82774BF08006946DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A242F72774BF08006946DA /* Assets.xcassets */; };
 		96A242FB2774BF08006946DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A242F92774BF08006946DA /* LaunchScreen.storyboard */; };
 		96A243052774CD34006946DA /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 96A243042774CD34006946DA /* Resnet50.mlmodel */; };
-		96ECBA3427974C100096919C /* SearchImageVC+ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ECBA3327974C100096919C /* SearchImageVC+ImagePickerDelegate.swift */; };
 		96F122612778B03500DC20DE /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F122602778B03500DC20DE /* FirebaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7A1C1B5FAEFD67A915B001E7 /* Pods-Search Image Recognition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Search Image Recognition.debug.xcconfig"; path = "Target Support Files/Pods-Search Image Recognition/Pods-Search Image Recognition.debug.xcconfig"; sourceTree = "<group>"; };
 		9618793B2777EF0100A89757 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9656D631279B86760055C231 /* UIViewControllerAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerAlertExtension.swift; sourceTree = "<group>"; };
 		965E3558277A3A7F00947A14 /* EncodedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodedStringExtension.swift; sourceTree = "<group>"; };
 		9661019A2778FB1E00573971 /* SearchImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageViewModel.swift; sourceTree = "<group>"; };
 		96A242EB2774BF06006946DA /* Search Image Recognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Search Image Recognition.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,7 +37,6 @@
 		96A242FA2774BF08006946DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96A242FC2774BF08006946DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96A243042774CD34006946DA /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
-		96ECBA3327974C100096919C /* SearchImageVC+ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchImageVC+ImagePickerDelegate.swift"; sourceTree = "<group>"; };
 		96F122602778B03500DC20DE /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		A1D40BAC8F5558F4266EB6C1 /* Pods_Search_Image_Recognition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Search_Image_Recognition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F819DFC2A87F3D8CC2F6B46B /* Pods-Search Image Recognition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Search Image Recognition.release.xcconfig"; path = "Target Support Files/Pods-Search Image Recognition/Pods-Search Image Recognition.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				965E3558277A3A7F00947A14 /* EncodedStringExtension.swift */,
+				9656D631279B86760055C231 /* UIViewControllerAlertExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -139,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				96A242F22774BF06006946DA /* SearchImageViewController.swift */,
-				96ECBA3327974C100096919C /* SearchImageVC+ImagePickerDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96F122612778B03500DC20DE /* FirebaseManager.swift in Sources */,
-				96ECBA3427974C100096919C /* SearchImageVC+ImagePickerDelegate.swift in Sources */,
+				9656D632279B86760055C231 /* UIViewControllerAlertExtension.swift in Sources */,
 				9661019B2778FB1E00573971 /* SearchImageViewModel.swift in Sources */,
 				96A242F32774BF06006946DA /* SearchImageViewController.swift in Sources */,
 				96A242EF2774BF06006946DA /* AppDelegate.swift in Sources */,

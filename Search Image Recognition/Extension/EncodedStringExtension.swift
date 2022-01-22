@@ -8,7 +8,8 @@
 import Foundation
 extension String
 {
-    func encodedURL() -> String {
+    func encodedURL() -> String
+    {
         return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
     }
 }
