@@ -23,7 +23,7 @@ class SearchImageViewController: UIViewController
         self.bindVisibilityOfUI()
         self.subscribeToError()
     }
-    //MARK: - rxswift methods
+//MARK: - rxswift methods
     func bindNavigationItem()
     {
         searchImageVM.accurateImageClassificationBehavior.bind(to: self.navigationItem.rx.title).disposed(by: disposeBag)

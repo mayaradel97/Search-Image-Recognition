@@ -41,7 +41,7 @@ class SearchImageViewModel
                 guard let imageURL = imageURL
                 else
                 {
-                    self.errorMessageSubject.onNext("An error occurred when loading image url!")
+                    self.errorMessageSubject.onNext("An error occurred when loading image url")
                     return
                 }
                 //google method
